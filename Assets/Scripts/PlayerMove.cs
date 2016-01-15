@@ -12,7 +12,7 @@ public class PlayerMove : NetworkBehaviour
         GetComponent<MeshRenderer>().material.color = Color.red;
         playerCam = Camera.main.gameObject;
 
-        camOffset = new Vector3(0f, 1.05f, -3.5f);
+        camOffset = new Vector3(0f, 10f, -3.5f);
     }
 
     [Command]
@@ -45,11 +45,11 @@ public class PlayerMove : NetworkBehaviour
         
         if(Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(Vector3.up * -Time.deltaTime * 15, Space.Self);
+            transform.Rotate(Vector3.up * -Time.deltaTime * 75, Space.Self);
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * 15, Space.Self);
+            transform.Rotate(Vector3.up * Time.deltaTime * 75, Space.Self);
         }
 
         transform.Translate(x, 0, z);
